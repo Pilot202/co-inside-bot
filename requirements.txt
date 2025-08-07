@@ -3,6 +3,9 @@ uvicorn
 google-generativeai
 python-dotenv
 pydantic
+beautifulsoup4
+requests
+python-multipart
 langchain-core
 langchain-google-genai
 langchain-community
