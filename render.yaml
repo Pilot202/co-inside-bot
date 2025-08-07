@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: REYAI-tutor-backend
+    runtime: python3.9
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envvars:
+      apikey: GOOGLE_API_KEY
+      sync: false
