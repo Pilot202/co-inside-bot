@@ -45,8 +45,8 @@ Question: {input}
 """
 
 # Initialize the chat
-chat = model.start_chat(history=[])
-initial_response = chat.send_message(web3_tutor_prompt)
+
+
 
 # Create prompt template
 PROMPT = PromptTemplate(
@@ -102,6 +102,7 @@ async def chat_endpoint(request: ChatRequest):
 async def chat_with_context(request: ChatRequest):
     """Endpoint for chat with context retrieval."""
     try:
+        chat = model.start_chat(history=[])
         context = get_relevant_info(request.query)
         response = chat.send_message(f"Context:\n{context}\n\nQuestion: {request.query}")
         return ChatResponse(response=response.text)
